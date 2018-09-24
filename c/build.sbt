@@ -1,2 +1,8 @@
-lazy val a = ProjectRef(file("../a"), "a")
-lazy val c = project.in(file(".")).dependsOn(a)
+organization := "example"
+name := "c"
+version := "0.0.1-SNAPSHOT"
+
+
+libraryDependencies ++= Seq(
+  "example" %% "b" % "0.0.1-SNAPSHOT"
+)
